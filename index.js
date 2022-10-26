@@ -1,17 +1,28 @@
-/*
+function getHTML(link) {
+  //let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
+  //let finalLink = PROXY + link;
+  finalLink = link;
+  response = fetch(finalLink).then(response => response.text()).then((html) => {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      console.log(doc);
+  }).catch(err => console.log(err))
+};
+
+
+
+//getHTML("https://www.merinfo.se/search?who=0702990271");
 function getNumber() {
-   var input = document.getElementById('inputNumber').value;
-   //console.log(input);
-   //alert(input);
+  var input = document.getElementById('inputNumber').value;
+  var part2 = input.replace("https://www.merinfo.se/search?who=", "");
+  var part1 = "https://www.merinfo.se/search?who=";
+  var final = part1 + part2;
+  getHTML(final);
+};
 
 
-   displayDetails(input);
-}
 
-
-function displayDetails(userPhone) {
-   console.log(userPhone);
-   var fullDiv = document.createElement('div');
-   fullDiv.className = "flexbox-container-2"
-}
-*/
+function displayDetails(info) {
+    console.log(info);
+    
+};
