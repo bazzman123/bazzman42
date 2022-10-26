@@ -1,13 +1,9 @@
 function getHTML(link) {
-  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
-  let finalLink = PROXY + link;
-  //finalLink = link;
-  response = fetch(finalLink).then(response => response.text()).then((html) => {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      console.log(doc);
-  }).catch(err => console.log(err))
-};
+  fetch("https://www.merinfo.se/search?who=0702990271&where=", {referrer: "https://www.merinfo.se/"})
+    .then(function(response) {
+    console.log(response)
+  });
+
 
 
 
