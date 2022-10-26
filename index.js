@@ -3,9 +3,9 @@ function getHTML(link) {
   let finalLink = PROXY + link;
   //finalLink = link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
-      //var parser = new DOMParser();
-      //var doc = parser.parseFromString(html, 'text/html');
-      console.log(html.referrer);
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      console.log(doc);
   }).catch(err => console.log(err))
 };
 
