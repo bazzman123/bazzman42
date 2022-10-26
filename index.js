@@ -1,11 +1,11 @@
 function getHTML(link) {
-  //let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
-  //let finalLink = PROXY + link;
-  finalLink = link;
+  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
+  let finalLink = PROXY + link;
+  //finalLink = link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      console.log(doc);
+      //var parser = new DOMParser();
+      //var doc = parser.parseFromString(html, 'text/html');
+      console.log(html.referrer);
   }).catch(err => console.log(err))
 };
 
