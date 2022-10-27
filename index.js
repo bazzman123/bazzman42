@@ -18,6 +18,16 @@ message.addEventListener('input', function () {
         });
 
 */
+collectedData = {};
+
+// Functions:
+functions countSameItems(array1, array2){
+  let arr1 = array1,
+    arr2 = array2,
+    compare = (a1, a2) => arr1.reduce((a, c) => a + arr2.includes(c), 0);
+  return compare(arr1, arr2);
+};
+
 
 document.querySelector('#inputNumber.search.input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -27,7 +37,6 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
     }
 });
 
-data = {};
 
 
 function respondWith(nmr) {
@@ -54,23 +63,38 @@ function getSearchHTML(link) {
       list_[i] = list_[i].replace(/\\x/g, '%');
       list_[i] = decodeURI(list_[i]);
     };
-    console.log(list_);
     list_[list_.length-1] = list_[list_.length-1].replace(/^[0-9\s]*/g, '');
-    console.log(list_);
     data["gatuadress/postord"] = [list_];
-    console.log(data);
     var content = {"address":String(list_[0]), "city":String(list_[1])};
-    carsAPI(content);
+    let namnTag = doc.getElementsByClassName("link-primary").href;
+    let mixList = namnTag.split(/\/|-/g);
+    carsAPI(content, mixList);
   }).catch(err => console.log(err))
 };
 
-function carsAPI(content) {
+function carsAPI(content, extra) {
   fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(content)}).then(function (response) {
     // The API call was successful!
     return response.json();
   }).then(function (data) {
     // This is the JSON from our response
     console.log(data);
+    let owners = [];//obj["data"]["vehicles"];
+    for (let i = 0; i < data["data"]["vehicles"].length; i++) {
+      owners.push(obj["data"]["vehicles"][i]["owner"]);
+    };
+    owners = [...new Set(owners)];
+    for (let i = 0; i < owners.length; i++) {
+      owners[i] = owners[i].split(/[ ]|-/g);
+    };
+    function whoOwns(nameTag, array1, array2) {
+      if (compare(nameTag, array2) > compare(nameTag, array1) {return array2};
+      if (compare(nameTag, array1) > compare(nameTag, array2) {return array1};
+      alert("Error: Båda folkbokförda på adressen har förvånandsvärt liknande namn...")
+      return array1
+    };
+    let theLastOwner = whoOwns(extra, owners[0], owners[1]);
+    console.log(theLastOwner);
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
