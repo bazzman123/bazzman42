@@ -115,7 +115,7 @@ function carsAPI(content, extra) {
     console.log(typeof(theLastOwner.join(" ")));//string1.localeCompare(string2)
     //let correct = data["data"]["vehicles"][i]["owner"].normalize();
     let bad = theLastOwner.join(" ").normalize();
-    for (let i = 0; i < data["data"]["vehicles"].length-1; i++) {
+    for (let i = 0; i < data["data"]["vehicles"].length; i++) {
       if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == 0) {
         carsTempMain.push(data["data"]["vehicles"][i]["model"]);
         console.log(i, i, i, i);
