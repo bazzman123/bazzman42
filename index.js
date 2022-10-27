@@ -66,9 +66,9 @@ function getSearchHTML(link) {
     list_[list_.length-1] = list_[list_.length-1].replace(/^[0-9\s]*/g, '');
     collectedData["gatuadress/postord"] = [list_];
     var content = {"address":String(list_[0]), "city":String(list_[1])};
-    let namnTag = doc.getElementsByClassName("link-primary").href;
-    let mixList = namnTag.split(/\/|-/g);
-    carsAPI(content, mixList);
+    let namnTag = doc.getElementsByClassName("link-primary");
+    //let mixList = namnTag.split(/\/|-/g);
+    carsAPI(content);//, mixList);
   }).catch(err => console.log(err))
 };
 
