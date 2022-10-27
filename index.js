@@ -1,3 +1,8 @@
+document.getElementById('inputNumber').addEventListener('submit', function(e) {
+    search(document.getElementById('inputNumber'));
+    e.preventDefault();
+}, false);
+
 function getHTML(link) {
   fetch("https://www.merinfo.se/search?who=0702990271&where=", {referrer: "https://www.merinfo.se/"})
     .then(function(response) {
@@ -16,6 +21,8 @@ function getNumber() {
   //getHTML(final);
   displayDetails(input);
 };
+
+
 
 function displayDetails(info) {
     console.log(info);
