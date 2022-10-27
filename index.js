@@ -46,7 +46,7 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
 });
 
 function respondWith(nmr) {
-    getAddress(nmr);
+    getSearchLink(nmr);
 };
 
 function getSearchLink(nmr) {
