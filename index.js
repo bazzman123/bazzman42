@@ -3,7 +3,7 @@ function getHTML(link) {
     .then(function(response) {
     console.log(response)
   });
-
+};
 
 
 
