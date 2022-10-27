@@ -101,11 +101,27 @@ function carsAPI(content, extra) {
     let theLastOwner = whoOwns(extra, owners[0], owners[1]);
     console.log(theLastOwner);
     collectedData["namn"] = theLastOwner.join(" ");
-    console.log(collectedData);
+    console.log(collectedData); //looooooooooooooooooooooooooooooooooooog
+    let carsTempMain = [];
+    let carsTemp2 = [];
+    for (let i = 0; i > collectedData["data"]["vehicles"].length; i++) {
+      if (collectedData["data"]["vehicles"][i]["owner"] == String(theLastOwner)) {
+        carsTempMain.push(data["data"]["vehicles"][i]["model"]);
+        carsTempMain.push(data["data"]["vehicles"][i]["year"]);
+        carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
+      };
+    };
+    //collectedData["Huvudperson-bilar"] = [];
+    
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
   });
+};
+
+function isCredit(url) {
+  console.log(url);
+  return res;
 };
 
 //getHTML EXAMPLE
