@@ -105,11 +105,8 @@ function carsAPI(content, extra) {
     let carsTempMain = [];
     let carsTemp2 = [];
     console.log(data["data"]["vehicles"].length);
-    for (let i = 0; i < data["data"]["vehicles"].length; i++) {
-      console.log(data["data"]["vehicles"][i]["owner"]);
-      console.log(String(data["data"]["vehicles"][i]["owner"]));
-      console.log(String(theLastOwner.join(" ")));
-      if (String(data["data"]["vehicles"][i]["owner"]) == String(theLastOwner.join(" ")))
+    if (String(data["data"]["vehicles"][i]["owner"]) == String(theLastOwner.join(" "))){console.log("JAAAAAAAAA")}
+    for (let i = 0; i < data["data"]["vehicles"].length-1; i++) {
       if (data["data"]["vehicles"][i]["owner"] == String(theLastOwner)) {
         carsTempMain.push(data["data"]["vehicles"][i]["model"]);
         carsTempMain.push(data["data"]["vehicles"][i]["year"]);
