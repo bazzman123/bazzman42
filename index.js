@@ -9,26 +9,8 @@ function getHTML(link) {
     console.log(response)
   });
 };
-
-
-
-//getHTML("https://www.merinfo.se/search?who=0702990271");
-function getNumber() {
-  var input = document.getElementById('inputNumber').value;
-  var part2 = input.replace("https://www.merinfo.se/search?who=", "");
-  var part1 = "https://www.merinfo.se/search?who=";
-  var final = part1 + part2;
-  //getHTML(final);
-  displayDetails(input);
-};
-
-
-
-function displayDetails(info) {
-    console.log(info);
-};
-
 */
+
 /*
 
 message.addEventListener('input', function () {
@@ -58,7 +40,7 @@ function getSearchLink(nmr) {
 
 function getSearchHTML(link) {
   let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + link;
-  response = fetch(finalLink).then((html) => {
+  response = fetch(finalLink).then(response => response.text()).then((html) => {
     var parser = new DOMParser();
     var doc = parser.parseFromString(html, 'text/html');
     console.log(doc);
