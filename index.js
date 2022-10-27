@@ -89,7 +89,7 @@ function getHTML(link) {
 };
 
 function getAPI(content) {
-  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(content)}).then(function (response) {
+  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, STJÄRNA-SLASH-STJÄRNA'}, body: JSON.stringify(content)}).then(function (response) {
     // The API call was successful!
     return response.json();
   }).then(function (data) {
