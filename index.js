@@ -50,7 +50,7 @@ function getSearchHTML(link) {
     let list_ = t.split("\n").filter(e =>  e);
     //let prepareTranslate = list.replace(/\\x/g, '%');
     for (let i = 0; i < list_.length; i++) {
-      list_[i] = list_[i].replace(/\/x/g, '%');
+      list_[i] = list_[i].replace(/\\x/g, '%');
     };
     console.log(list_);
   }).catch(err => console.log(err))
