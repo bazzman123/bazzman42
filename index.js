@@ -105,6 +105,8 @@ function carsAPI(content, extra) {
     let carsTempMain = [];
     let carsTemp2 = [];
     console.log(data["data"]["vehicles"][5]["owner"]);
+    console.log(type(data["data"]["vehicles"][5]["owner"]));
+    console.log(String(theLastOwner.join(" ")));
     console.log(data["data"]["vehicles"][5]);
     console.log(data["data"]["vehicles"]);
     for (let i = 0; i < data["data"]["vehicles"].length-1; i++) {
