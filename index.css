@@ -11,11 +11,11 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+
+.search.container {
+    padding-top: 30px;
+}
 .search {
-    &__container {
-        padding-top: 30px;
-    }
-    
     &__input {
         width: 100%;
         padding: 12px 24px;
