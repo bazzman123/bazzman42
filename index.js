@@ -37,7 +37,7 @@ message.addEventListener('input', function () {
 
 */
 
-document.querySelector('#inputNumber').addEventListener('keypress', function (e) {
+document.querySelector('#iinputNumber.search.input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         respondWith(document.getElementById("inputNumber").value);
         //event.preventDefault();
