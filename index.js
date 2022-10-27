@@ -1,3 +1,8 @@
+
+
+
+/*
+
 function getHTML(link) {
   fetch("https://www.merinfo.se/search?who=0702990271&where=", {referrer: "https://www.merinfo.se/"})
     .then(function(response) {
@@ -22,3 +27,24 @@ function getNumber() {
 function displayDetails(info) {
     console.log(info);
 };
+
+*/
+/*
+
+message.addEventListener('input', function () {
+            result.textContent = this.value;
+        });
+
+*/
+
+document.querySelector('#inputNumber').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        respondWith(document.getElementById("inputNumber").value);
+        //event.preventDefault();
+        document.getElementById("inputNumber").value = "";
+    }
+});
+
+function respondWith(nmr) {
+    console.log(nmr);
+}
