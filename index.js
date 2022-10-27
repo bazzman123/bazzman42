@@ -104,17 +104,20 @@ function carsAPI(content, extra) {
     console.log(collectedData); //looooooooooooooooooooooooooooooooooooog
     let carsTempMain = [];
     let carsTemp2 = [];
+    /*
     console.log(data["data"]["vehicles"][5]["owner"]);
     console.log(typeof(data["data"]["vehicles"][5]["owner"]));
     console.log(String(theLastOwner.join(" ")));
     console.log(data["data"]["vehicles"][5]);
     console.log(data["data"]["vehicles"]);
+    */
     for (let i = 0; i < data["data"]["vehicles"].length-1; i++) {
-      if (data["data"]["vehicles"][i]["owner"] == String(theLastOwner.join(" "))) {
+      if (localeCompare(data["data"]["vehicles"][i]["owner"], String(theLastOwner.join(" ")) == 0) {
         carsTempMain.push(data["data"]["vehicles"][i]["model"]);
         carsTempMain.push(data["data"]["vehicles"][i]["year"]);
         carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
-      };
+      }
+      carsTempMain.push(data["data"]["vehicles"][i]["model"]);
     };
     console.log(carsTempMain);
     console.log(carsTemp2);
