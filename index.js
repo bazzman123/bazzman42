@@ -46,5 +46,39 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
 });
 
 function respondWith(nmr) {
-    console.log(nmr);
-}
+    getAddress(nmr);
+};
+
+function getSearchLink(nmr) {
+  let part1 = "https://www.merinfo.se/search?who=";
+  let part2 = String(nmr);
+  let searchLink = part1 + part2;
+  getSearchHTML(searchLink);
+};
+
+function getSearchHTML() {
+  
+};
+function getSearchHTML(link) {
+  let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + link;
+  response = fetch(finalLink).then((html) => {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(html, 'text/html');
+    console.log(doc);
+  }).catch(err => console.log(err))
+};
+
+//getHTML EXAMPLE
+/* 
+function getHTML(link) {
+  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
+  let finalLink = PROXY + link;
+  response = fetch(finalLink).then(response => response.text()).then((html) => {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      let href = doc.getElementsByClassName("link-primary")[0].href;
+      info["searchedLink"] = href;
+      getCODE(href);
+  }).catch(err => console.log(err))
+};
+*/
