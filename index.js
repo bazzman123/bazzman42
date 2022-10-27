@@ -56,9 +56,6 @@ function getSearchLink(nmr) {
   getSearchHTML(searchLink);
 };
 
-function getSearchHTML() {
-  
-};
 function getSearchHTML(link) {
   let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + link;
   response = fetch(finalLink).then((html) => {
