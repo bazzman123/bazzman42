@@ -52,7 +52,8 @@ function getSearchHTML(link) {
       list_[i] = decodeURI(list_[i]);
     };
     console.log(list_);
-    
+    list_[list_.length] = list_[list_.length].replace(/^[1-9\s]*/g, '');
+    console.log(list_);
   }).catch(err => console.log(err))
 };
 
