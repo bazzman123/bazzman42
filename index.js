@@ -2,7 +2,7 @@ function getHTML(link) {
   fetch("https://www.merinfo.se/search?who=0702990271&where=", {referrer: "https://www.merinfo.se/"})
     .then(function(response) {
     console.log(response)
-  })
+  });
 };
 
 
@@ -14,10 +14,8 @@ function getNumber() {
   var part1 = "https://www.merinfo.se/search?who=";
   var final = part1 + part2;
   //getHTML(final);
-  displayDetails(inpput);
+  displayDetails(input);
 };
-
-
 
 function displayDetails(info) {
     console.log(info);
