@@ -88,8 +88,8 @@ function carsAPI(content, extra) {
       owners[i] = owners[i].split(/[ ]|-/g);
     };
     function whoOwns(nameTag, array1, array2) {
-      if (compare(nameTag, array2) > compare(nameTag, array1) {return array2};
-      if (compare(nameTag, array1) > compare(nameTag, array2) {return array1};
+      if (countSameItems(nameTag, array2) > countSameItems(nameTag, array1) {return array2};
+      if (countSameItems(nameTag, array1) > countSameItems(nameTag, array2) {return array1};
       alert("Error: Båda folkbokförda på adressen har förvånandsvärt liknande namn...")
       return array1
     };
