@@ -27,6 +27,9 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
     }
 });
 
+data = {};
+
+
 function respondWith(nmr) {
     getSearchLink(nmr);
 };
@@ -54,6 +57,8 @@ function getSearchHTML(link) {
     console.log(list_);
     list_[list_.length-1] = list_[list_.length-1].replace(/^[0-9\s]*/g, '');
     console.log(list_);
+    data["gatuadress/postord"] = [list_];
+    console.log(data);
   }).catch(err => console.log(err))
 };
 
