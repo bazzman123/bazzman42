@@ -59,7 +59,21 @@ function getSearchHTML(link) {
     console.log(list_);
     data["gatuadress/postord"] = [list_];
     console.log(data);
+    carsAPI(list_);
   }).catch(err => console.log(err))
+};
+
+function getAPI(content) {
+  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(content)}).then(function (response) {
+    // The API call was successful!
+    return response.json();
+  }).then(function (data) {
+    // This is the JSON from our response
+    console.log(data);
+  }).catch(function (err) {
+    // There was an error
+    console.warn('Something went wrong.', err);
+  });
 };
 
 //getHTML EXAMPLE
