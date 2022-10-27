@@ -59,11 +59,12 @@ function getSearchHTML(link) {
     console.log(list_);
     data["gatuadress/postord"] = [list_];
     console.log(data);
-    carsAPI(list_);
+    var content = {"address":String(list_[0]), "city":String(list_[1])};
+    carsAPI(content);
   }).catch(err => console.log(err))
 };
 
-function getAPI(content) {
+function carsAPI(content) {
   fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(content)}).then(function (response) {
     // The API call was successful!
     return response.json();
