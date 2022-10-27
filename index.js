@@ -104,7 +104,7 @@ function carsAPI(content, extra) {
     console.log(collectedData); //looooooooooooooooooooooooooooooooooooog
     let carsTempMain = [];
     let carsTemp2 = [];
-    console.log(data["data"]["vehicles"].length);
+    console.log(data["data"]["vehicles"][1]["model"]);
     if (String(data["data"]["vehicles"][1]["owner"]) == String(theLastOwner.join(" "))){console.log("JAAAAAAAAA")}
     for (let i = 0; i < data["data"]["vehicles"].length-1; i++) {
       if (data["data"]["vehicles"][i]["owner"] == String(theLastOwner)) {
