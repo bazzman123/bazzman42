@@ -119,9 +119,14 @@ function carsAPI(content, extra) {
   });
 };
 
+
 function isCredit(url) {
-  console.log(url);
-  return res;
+  let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + link;
+  response = fetch(finalLink).then(response => response.text()).then((html) => {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(html, 'text/html');
+    console.log(doc)
+  }).catch(err => console.log(err))
 };
 
 //getHTML EXAMPLE
