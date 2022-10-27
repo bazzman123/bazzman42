@@ -100,6 +100,8 @@ function carsAPI(content, extra) {
     };
     let theLastOwner = whoOwns(extra, owners[0], owners[1]);
     console.log(theLastOwner);
+    collectedData["namn"] = theLastOwner.join(" ");
+    console.log(collectedData);
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
