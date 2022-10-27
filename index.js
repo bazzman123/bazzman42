@@ -68,6 +68,7 @@ function getSearchHTML(link) {
     var content = {"address":String(list_[0]), "city":String(list_[1])};
     let namnTag = doc.getElementsByClassName("link-primary");
     //let mixList = namnTag.split(/\/|-/g);
+    console.log(namnTag);
     carsAPI(content);//, mixList);
   }).catch(err => console.log(err))
 };
