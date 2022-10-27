@@ -111,19 +111,20 @@ function carsAPI(content, extra) {
     console.log(data["data"]["vehicles"][5]);
     console.log(data["data"]["vehicles"]);
     */
-    console.log(typeof(data["data"]["vehicles"][5]["owner"]));//data["data"]["vehicles"][i]["owner"].normalize() === theLastOwner.join(" ").normalize()
-    console.log(typeof(theLastOwner.join(" ")));//string1.localeCompare(string2)
+    //console.log(typeof(data["data"]["vehicles"][5]["owner"]));//data["data"]["vehicles"][i]["owner"].normalize() === theLastOwner.join(" ").normalize()
+    //console.log(typeof(theLastOwner.join(" ")));//string1.localeCompare(string2)
     //let correct = data["data"]["vehicles"][i]["owner"].normalize();
     let bad = theLastOwner.join(" ").normalize();
     for (let i = 0; i < data["data"]["vehicles"].length; i++) {
       if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == 0) {
         carsTempMain.push(data["data"]["vehicles"][i]["model"]);
-        console.log(i, i, i, i);
-        //carsTempMain.push(data["data"]["vehicles"][i]["year"]);
+        //console.log(i, i, i, i);
+        carsTempMain.push(data["data"]["vehicles"][i]["year"]);
         //carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
       };
-      console.log("jaaaa", i);
+      //console.log("jaaaa", i);
       carsTemp2.push(data["data"]["vehicles"][i]["model"]);
+      carsTemp2.push(data["data"]["vehicles"][i]["year"]);
     };
     console.log(carsTempMain);
     console.log(carsTemp2);
