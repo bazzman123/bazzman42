@@ -48,7 +48,7 @@ function getSearchHTML(link) {
     let t = doc.getElementsByClassName("col pb-3 pl-3 pt-0 pr-0")[0].getElementsByClassName("mb-0")[1].innerText;
     console.log(t);
     let list_ = t.split("\n").filter(e =>  e);
-    //let prepareTranslate = list.replace(/\\x/g, '%');
+    //let prepareTranslate = list_.replace(/\\x/g, '%');
     for (let i = 0; i < list_.length; i++) {
       list_[i] = list_[i].replace(/\\x/g, '%');
     };
