@@ -2,7 +2,7 @@ function getHTML(link) {
   fetch("https://www.merinfo.se/search?who=0702990271&where=", {referrer: "https://www.merinfo.se/"})
     .then(function(response) {
     console.log(response)
-  });
+  })
 };
 
 
