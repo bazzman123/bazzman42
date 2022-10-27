@@ -44,9 +44,13 @@ function getSearchHTML(link) {
     var parser = new DOMParser();
     var doc = parser.parseFromString(html, 'text/html');
     console.log(doc);
-    let mb = doc.getElementsByClassName("mb-0");
+    //let mb = doc.getElementsByClassName("mb-0");
     let t = doc.getElementsByClassName("col pb-3 pl-3 pt-0 pr-0")[0].getElementsByClassName("mb-0")[1].innerText;
     console.log(t);
+    let list = t.split("\n").filter(e =>  e);
+    let prepareTranslate = list.replace(/\\x/g, '%');
+    console.log(list);
+    console.log(prepareTranslate);
   }).catch(err => console.log(err))
 };
 
