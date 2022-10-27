@@ -111,8 +111,9 @@ function carsAPI(content, extra) {
     console.log(data["data"]["vehicles"][5]);
     console.log(data["data"]["vehicles"]);
     */
+    console.log(typeof(data["data"]["vehicles"][i]["owner"]));
     for (let i = 0; i < data["data"]["vehicles"].length-1; i++) {
-      if (data["data"]["vehicles"][i]["owner"] != theLastOwner.join(" ")) {
+      if (data["data"]["vehicles"][i]["owner"] == theLastOwner.join(" ")) {
         carsTempMain.push(data["data"]["vehicles"][i]["model"]);
         carsTempMain.push(data["data"]["vehicles"][i]["year"]);
         //carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
