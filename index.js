@@ -115,7 +115,7 @@ function carsAPI(content, extra) {
       if (data["data"]["vehicles"][i]["owner"] != theLastOwner.join(" ")) {
         carsTempMain.push(data["data"]["vehicles"][i]["model"]);
         carsTempMain.push(data["data"]["vehicles"][i]["year"]);
-        carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
+        //carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
       }
       carsTempMain.push(data["data"]["vehicles"][i]["model"]);
     };
