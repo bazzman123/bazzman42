@@ -123,7 +123,7 @@ function carsAPI(content, extra) {
         //carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
       };
       console.log("jaaaa", i);
-      carsTempMain.push(data["data"]["vehicles"][i]["model"]);
+      carsTemp2.push(data["data"]["vehicles"][i]["model"]);
     };
     console.log(carsTempMain);
     console.log(carsTemp2);
