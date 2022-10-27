@@ -21,7 +21,7 @@ message.addEventListener('input', function () {
 collectedData = {};
 
 // Functions:
-functions countSameItems(array1, array2){
+function countSameItems(array1, array2){
   let arr1 = array1,
     arr2 = array2,
     compare = (a1, a2) => arr1.reduce((a, c) => a + arr2.includes(c), 0);
