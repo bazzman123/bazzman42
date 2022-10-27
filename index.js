@@ -1,4 +1,4 @@
-document.getElementById('searchForm').addEventListener('submit', function(e) {
+document.getElementById('searchForm').addEventListener('submitNumber', function(e) {
     search(document.getElementById('inputNumber'));
     e.preventDefault();
 }, false);
