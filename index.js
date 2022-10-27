@@ -82,7 +82,7 @@ function carsAPI(content, extra) {
     console.log(data);
     let owners = [];//obj["data"]["vehicles"];
     for (let i = 0; i < data["data"]["vehicles"].length; i++) {
-      owners.push(obj["data"]["vehicles"][i]["owner"]);
+      owners.push(data["data"]["vehicles"][i]["owner"]);
     };
     owners = [...new Set(owners)];
     for (let i = 0; i < owners.length; i++) {
