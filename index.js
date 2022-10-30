@@ -39,6 +39,8 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
 
 
 
+
+
 function respondWith(nmr) {
     getSearchLink(nmr);
 };
@@ -99,32 +101,25 @@ function carsAPI(content, extra) {
       return array1;
     };
     let theLastOwner = whoOwns(extra, owners[0], owners[1]);
-    console.log(theLastOwner);
+    //console.log(theLastOwner);
     collectedData["namn"] = theLastOwner.join(" ");
     console.log(collectedData); //looooooooooooooooooooooooooooooooooooog
     let carsTempMain = [];
     let carsTemp2 = [];
-    /*
-    console.log(data["data"]["vehicles"][5]["owner"]);
-    console.log(typeof(data["data"]["vehicles"][5]["owner"]));
-    console.log(String(theLastOwner.join(" ")));
-    console.log(data["data"]["vehicles"][5]);
-    console.log(data["data"]["vehicles"]);
-    */
-    //console.log(typeof(data["data"]["vehicles"][5]["owner"]));//data["data"]["vehicles"][i]["owner"].normalize() === theLastOwner.join(" ").normalize()
-    //console.log(typeof(theLastOwner.join(" ")));//string1.localeCompare(string2)
-    //let correct = data["data"]["vehicles"][i]["owner"].normalize();
     let bad = theLastOwner.join(" ").normalize();
     for (let i = 0; i < data["data"]["vehicles"].length; i++) {
       if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == 0) {
-        carsTempMain.push([data["data"]["vehicles"][i]["model"], data["data"]["vehicles"][i]["year"]]);
-        //carsTempMain.push(data["data"]["vehicles"][i]["year"]);
-        //carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
-      };
+        carsTempMain.push([data["data"]["vehicles"][i]["model"], data["data"]["vehicles"][i]["year"], data["data"]["vehicles"][i]["url"]]);
+        response = fetch(data["data"]["vehicles"][i]["url"]).then(response => response.text()).then((html1) => {
+          var parser1 = new DOMParser();
+          var doc1 = parser.parseFromString(html1, 'text/html');
+          console.log("ReSPOOOONS", doc1);
+          }).catch(err => console.log(err))
+        };
       //console.log("jaaaa", i);
-      if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == -1)
-        carsTemp2.push([data["data"]["vehicles"][i]["model"], data["data"]["vehicles"][i]["year"]]);
-        //carsTemp2.push(data["data"]["vehicles"][i]["year"]);
+      if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == -1) {
+        carsTemp2.push([data["data"]["vehicles"][i]["model"], data["data"]["vehicles"][i]["year"], data["data"]["vehicles"][i]["url"]]);
+        };
     };
     console.log(carsTempMain);
     console.log(carsTemp2);
@@ -136,7 +131,7 @@ function carsAPI(content, extra) {
   });
 };
 
-
+/*
 function isCredit(url) {
   let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + link;
   response = fetch(finalLink).then(response => response.text()).then((html) => {
@@ -145,6 +140,7 @@ function isCredit(url) {
     console.log(doc)
   }).catch(err => console.log(err))
 };
+*/
 
 //getHTML EXAMPLE
 /* 
