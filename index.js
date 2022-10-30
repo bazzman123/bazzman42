@@ -118,13 +118,13 @@ function carsAPI(content, extra) {
     for (let i = 0; i < data["data"]["vehicles"].length; i++) {
       if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == 0) {
         carsTempMain.push(data["data"]["vehicles"][i]["model"]);
-        //console.log(i, i, i, i);
         carsTempMain.push(data["data"]["vehicles"][i]["year"]);
         //carsTempMain.push(isCredit(data["data"]["vehicles"][i]["url"]));
       };
       //console.log("jaaaa", i);
-      carsTemp2.push(data["data"]["vehicles"][i]["model"]);
-      carsTemp2.push(data["data"]["vehicles"][i]["year"]);
+      if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == -1)
+        carsTemp2.push(data["data"]["vehicles"][i]["model"]);
+        carsTemp2.push(data["data"]["vehicles"][i]["year"]);
     };
     console.log(carsTempMain);
     console.log(carsTemp2);
