@@ -8,14 +8,12 @@ body {
     background-color: #F7CAC9;
     font-family: 'Raleway', sans-serif;
 }
-#cover {
-    width: 430px;
-    margin: 0 5% 0 auto;
-}
 
 
 .search.container {
-        padding-top: 10px;
+    padding-top: 10px;
+    width: 430px;
+    margin: 0 5% 0 auto;
 }
 
 .search.input {
