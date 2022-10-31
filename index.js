@@ -151,8 +151,7 @@ function carsAPI(content, extra) {
     let bilar = data["data"]["vehicles"]
     
     
-    //creditFromURL(data["data"]["vehicles"]);
-    for i in 
+    creditFromURL(data["data"]["vehicles"]);
     //for (let i = 0; i < bilar.length; i++) {};
     //displayCars(data["data"]["vehicles"]);
   }).catch(function (err) {
@@ -162,12 +161,8 @@ function carsAPI(content, extra) {
 };
 
 
-//let newList = []; //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 function creditFromURL(list) {
-  let c = "";
-  console.log("LIIIST", list);
   let list1 = list;
-  //let newList = []; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   for (let i = 0; i < list1.length; i++) {
     response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
       var parser = new DOMParser();
