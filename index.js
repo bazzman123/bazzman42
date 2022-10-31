@@ -175,8 +175,8 @@ function creditFromURL(list) {
 function displayCars(bilar) {
   console.log("BILAAAR CHECK:", bilar);
   console.log("h1", bilar[2]);
-  console.log("h1", bilar[2]["model"]);
-  console.log("h1", bilar[2]["kredit"]);
+  console.log(typeof(bilar[2]));
+  console.log(typeof(bilar[2]["kredit"]));
   console.log("kEEEEYS", bilar.keys());
   for (let i = 0; i < bilar.length; i++) {
     console.log("KREEEDIIIIT CHECK", bilar[i]["kredit"]);
