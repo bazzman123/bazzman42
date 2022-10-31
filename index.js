@@ -158,19 +158,22 @@ function carsAPI(content, extra) {
 
 function creditFromURL(list) {
   let list1 = list;
+  let newlist = [];
   for (let i = 0; i < list1.length; i++) {
     response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
       list1[i]["regno"] = creditBool;
+      let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
+      newList.push(newObj);
       //console.log("typeof ---->", typeof(creditBool))
       //console.log("creditBool --->", creditBool)
     }).catch(err => console.log(err))
   };
-  console.log("LIST 1 !!!!!!");
-  console.log(list1);
-  displayCars(list1);
+  console.log(newList);
+  //console.log(list1);
+  displayCars(newList);
 };
 
 
