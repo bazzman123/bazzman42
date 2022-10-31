@@ -174,7 +174,7 @@ function creditFromURL(list) {
 
 function displayCars(bilar) {
   for (let i = 0; i < bilar.length; i++) {
-    //console.log(bilar[i]["model"]);
+    console.log("KREEEDIIIIT CHECK", bilar[i]["kredit"]);
     var listItem = document.createElement("LI"); //Creates item list
     let carInfoN = bilar[i]["kredit"] + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
     var listText = document.createTextNode(carInfoN);
