@@ -181,7 +181,12 @@ displayCars(carsTemp);
 
 
 function displayCars(bilar1) {
-  console.log("DISPLAAY", bilar1)
+  let bilar = bilar1
+  console.log("DISPLAAY", bilar1);
+  console.log("00", bilar1["kredit"]);
+  for (i = 0; i < bilar.length; i++) {
+    console.log(bilar[i]);
+  };
 };
 
 
