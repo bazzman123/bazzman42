@@ -163,24 +163,26 @@ function carsAPI(content, extra) {
 
 //let newList = []; //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 function creditFromURL(list) {
+  console.log("LIIIST", list);
   let list1 = list;
   //let newList = []; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   for (let i = 0; i < list1.length; i++) {
-    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html) => {
+    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
       var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      let creditBool = doc.getElementById("data-credit").textContent;
-      tempCar.push(creditBool);
+      var doc1 = parser.parseFromString(html1, 'text/html');
+      let creditBool = doc1.getElementById("data-credit").textContent;
+      
     }).catch(err => console.log(err));
     //list1[i]["regno"] = creditBool;
     //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
-    //newList.push(newObj);
-    let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(tempCar[i])];
-    newList.push(newObj);
+    //    newList.push(newObj);
+    //let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(tempCar[i])];
+    //    newList.push(newObj);
   };
-  console.log(newList);
+  
+  //    console.log(newList);
   //console.log(list1);
-  displayCars(newList);
+  //    displayCars(newList);
 };
 
 
