@@ -78,7 +78,7 @@ function getSearchHTML(link) {
     let namnTag = doc.getElementsByClassName("link-primary")[0].href;
     let mixList = namnTag.split(/\/|-/g);
     console.log(namnTag);
-    carsAPI(content, mixList);
+    carsAPI(content);
   }).catch(err => console.log(err))
 };
 
@@ -149,6 +149,7 @@ function carsAPI(content, extra) {
     console.log(data);
     /////////////////////////////////////////////////////////// let bilar = data["data"]["vehicles"];
     //let bilar = data["data"]["vehicles"]
+    console.log("json type --->", typeof(data["data"]["vehicles"]));
     creditFromURL(data["data"]["vehicles"]);
     //for (let i = 0; i < bilar.length; i++) {};
     //displayCars(data["data"]["vehicles"]);
@@ -167,12 +168,12 @@ function creditFromURL(list) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
-      list1[i]["regno"] = creditBool;
-      //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
-      //newList.push(newObj);
-      let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(creditBool)];
-      newList.push(newObj)
-    }).catch(err => console.log(err))
+    }).catch(err => console.log(err));
+    //list1[i]["regno"] = creditBool;
+    //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
+    //newList.push(newObj);
+    let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(creditBool)];
+    newList.push(newObj);
   };
   console.log(newList);
   //console.log(list1);
