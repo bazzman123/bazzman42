@@ -140,7 +140,9 @@ function creditFromURL(list) {
         var span3 = document.createElement('span');
         var span3Text = document.createTextNode(list1[i]["owner"]);
         span3.setAttribute("class", "owner1");
-        listItem.appendChild(span1Text.appendChild(span1));
+        
+        span3.appendChild(span3Text).setAttribute("class", "owner1");
+        listItem.appendChild(span1.appendChild(span1Text));
         listItem.appendChild(span2.appendChild(span2Text));
         listItem.appendChild(span3.appendChild(span3Text));
         document.getElementById("carsList").appendChild(listItem);//.appendChild();
