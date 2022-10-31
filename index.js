@@ -178,6 +178,10 @@ function displayCars(bilar) {
   console.log(typeof(bilar[2]));
   console.log(typeof(bilar[2]["kredit"]));
   console.log("kEEEEYS", bilar.keys());
+  var values = Object.keys(bilar[2]).map(function(key){
+    return bilar[2][key];
+  });
+  console.log(values);
   for (let i = 0; i < bilar.length; i++) {
     console.log("KREEEDIIIIT CHECK", bilar[i]["kredit"]);
     var listItem = document.createElement("LI"); //Creates item list
