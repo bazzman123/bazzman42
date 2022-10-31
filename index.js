@@ -172,15 +172,16 @@ function creditFromURL(list) {
       var doc1 = parser.parseFromString(html1, 'text/html');
       let creditBool = doc1.getElementById("data-credit").textContent;
       console.log("MOOOODEL", list1[i]["model"]);
-      carsTemp.push({"kredit": creditBool});
+      carsTemp.push({"kredit": creditBool, "model": list1[i]["model"], "year", list1[i]["year"], "owner": list1[i]["owner"]});
     }).catch(err => console.log(err))
   };
-  console.log(carsTemp);
+console.log(carsTemp);
+displayCars(carsTemp);
 };
 
 
 function displayCars(bilar1) {
-  
+  console.log("DISPLAAY", bilar1)
 };
 
 
