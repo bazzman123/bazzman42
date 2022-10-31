@@ -75,6 +75,10 @@ body {
   flex-direction: column;
 }
 
+.titleCarsYo {
+    color: white;
+}
+
 /* ------- */
 .listItemFlex {
   display: flex;
@@ -89,3 +93,4 @@ body {
 .owner1 {
   color: blue;
 }
+
