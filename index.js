@@ -140,7 +140,8 @@ function carsAPI(content, extra) {
   }).then(function (data) {
     // This is the JSON from our response
     console.log(data);
-    
+    let bilar = data["data"]["vehicles"];
+    console.log(bilar);
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
