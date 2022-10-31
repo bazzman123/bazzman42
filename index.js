@@ -132,16 +132,15 @@ function creditFromURL(list) {
         //var listItem = document.createElement('span')
         //listItem.innerHTML = dateString;
         var span1 = document.createElement('span');
-        var span1Text = document.createTextNode(list1[i]["year"]);
         span1.setAttribute("class", "year1");
+        var span1Text = document.createTextNode(list1[i]["year"]);
         var span2 = document.createElement('span');
-        var span2Text = document.createTextNode(list1[i]["model"]);
         span2.setAttribute("class", "model1");
+        var span2Text = document.createTextNode(list1[i]["model"]);
         var span3 = document.createElement('span');
-        var span3Text = document.createTextNode(list1[i]["owner"]);
         span3.setAttribute("class", "owner1");
+        var span3Text = document.createTextNode(list1[i]["owner"]);
         
-        span3.appendChild(span3Text).setAttribute("class", "owner1");
         listItem.appendChild(span1.appendChild(span1Text));
         listItem.appendChild(span2.appendChild(span2Text));
         listItem.appendChild(span3.appendChild(span3Text));
