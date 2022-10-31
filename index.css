@@ -5,7 +5,7 @@
 /* Base styling */
 
 body {
-    background-color: #F7CAC9;
+    background-color: #121212;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -76,21 +76,39 @@ body {
 }
 
 .titleCarsYo {
-    color: white;
+  margin-top: 0;
+  color: #03DAC5;
 }
 
-/* ------- */
 .listItemFlex {
   display: flex;
   flex-direction: column;
 }
+
+
+.carAll3 {
+  border: 1px solid #575756;
+  padding: 7px;
+  list-style: none;
+  border-radius: 8px;
+  /*background-color: #03DAC5;*/
+  background-color: #03DAC5;
+  opacity: 0.15;
+}
+
 .year1 {
-  color: green;
+  opacity: 0;
+  color: white;
+  margin-right: 25px;
 }
 .model1 {
-  color: red;
+  opacity: 0;
+  color: white;
+  margin-right: 25px;
+  font-size: 10;
 }
 .owner1 {
-  color: blue;
+  opacity: 0;
+  color: white;
 }
 
