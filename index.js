@@ -141,7 +141,9 @@ function carsAPI(content, extra) {
     // This is the JSON from our response
     console.log(data);
     let bilar = data["data"]["vehicles"];
-    console.log(bilar);
+    for (let i = 0; i < bilar.length; i++) {
+      console.log(bilar[i]["model"]);
+    };
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
