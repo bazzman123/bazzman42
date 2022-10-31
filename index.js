@@ -172,14 +172,17 @@ function creditFromURL(list) {
       var doc1 = parser.parseFromString(html1, 'text/html');
       let creditBool = doc1.getElementById("data-credit").textContent;
       
-    }).catch(err => console.log(err));
+    }).catch(err => console.log(err))
     //list1[i]["regno"] = creditBool;
     //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
     //    newList.push(newObj);
     //let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(tempCar[i])];
     //    newList.push(newObj);
+    list1[i]["regno"] = creditBool;
+    console.log(creditBool);
+    console.log(list1[i]);
   };
-  
+  console.log(list1);
   //    console.log(newList);
   //console.log(list1);
   //    displayCars(newList);
@@ -211,9 +214,7 @@ function displayCars(bilar1) {
   console.log(bilar1[0]);
   console.log(bilar1[0][0]);
   */
-  for (p = 0; p < bilar.length; p++) {
-    console.log(bilar1[p][3])
-  }
+  
 };
 
 
