@@ -156,9 +156,10 @@ function carsAPI(content, extra) {
   });
 };
 
+let newList = []; //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 function creditFromURL(list) {
   let list1 = list;
-  let newList = [];
+  //let newList = []; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   for (let i = 0; i < list1.length; i++) {
     response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
@@ -198,8 +199,6 @@ function displayCars(bilar) {
   */
   console.log(bilar);
   console.log(typeof(bilar));
-  console.log(typeof(bilar[0]));
-  console.log(bilar[0]);
   for (let i = 0; i < bilar.length; i++) {
     console.log(bilar[i]);
   };
