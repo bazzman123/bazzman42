@@ -75,8 +75,10 @@ function getSearchHTML(link) {
   }).catch(err => console.log(err))
 };
 
+
+/*
 function carsAPI(content, extra) {
-  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(content)}).then(function (response) {
+  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, stjärna-slash-stjärna'}, body: JSON.stringify(content)}).then(function (response) {
     // The API call was successful!
     return response.json();
   }).then(function (data) {
@@ -130,6 +132,28 @@ function carsAPI(content, extra) {
     console.warn('Something went wrong.', err);
   });
 };
+*/
+function carsAPI(content, extra) {
+  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(content)}).then(function (response) {
+    // The API call was successful!
+    return response.json();
+  }).then(function (data) {
+    // This is the JSON from our response
+    console.log(data);
+    
+  }).catch(function (err) {
+    // There was an error
+    console.warn('Something went wrong.', err);
+  });
+};
+
+
+
+
+
+
+
+
 
 /*
 function isCredit(url) {
