@@ -74,3 +74,18 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* ------- */
+.listItemFlex {
+  display: flex;
+  flex-direction: column;
+}
+.year1 {
+  color: green;
+}
+.model1 {
+  color: red;
+}
+.owner1 {
+  color: blue;
+}
