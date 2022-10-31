@@ -52,3 +52,25 @@ body {
     border-radius: 0;
     background-position: 100% center;
 }
+
+
+
+/*  GATHEREEEED:  */
+
+.gathered {
+  margin-top: 50px;
+}
+
+/*  CAAAARS:  */
+
+.cars-box {
+  margin: 20px 20px 20px 20px;
+  padding: 15px;
+  border: 1px solid #575756;
+  border-radius: 15px;
+}
+
+.flexbox-cars {
+  display: flex;
+  flex-direction: column;
+}
