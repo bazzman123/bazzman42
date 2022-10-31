@@ -175,12 +175,15 @@ function creditFromURL(list) {
 function displayCars(bilar) {
   console.log("BILAAAR CHECK:", bilar);
   console.log("h1", bilar[2]);
-  console.log(typeof(bilar[2]));
-  console.log(typeof(bilar[2]["kredit"]));
-  console.log("kEEEEYS", bilar.keys());
   var values = Object.keys(bilar[2]).map(function(key){
     return bilar[2][key];
   });
+  console.log(Object.keys(bilar[2][0]));
+  console.log(Object.keys(bilar[2][1]));
+  console.log(Object.keys(bilar[2][2]));
+  console.log(Object.keys(bilar[2][3]));
+  console.log(Object.keys(bilar[2][4]));
+  console.log(Object.keys(bilar[2][5]));
   console.log(values);
   for (let i = 0; i < bilar.length; i++) {
     console.log("KREEEDIIIIT CHECK", bilar[i]["kredit"]);
