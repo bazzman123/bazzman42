@@ -170,7 +170,7 @@ function creditFromURL(list) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
-      tempCar = creditBool;
+      tempCar.push(creditBool);
     }).catch(err => console.log(err));
     //list1[i]["regno"] = creditBool;
     //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
@@ -203,11 +203,13 @@ function displayCars(bilar1) {
     document.getElementById("carsList").appendChild(listItem);
   };
   */
+  /*
   console.log(bilar1);
   console.log(typeof(bilar1));
   console.log(bilar1[0]);
   console.log(bilar1[0][0]);
-  for (p = 0; p < 6; p++) {
+  */
+  for (p = 0; p < bilar.length; p++) {
     console.log(bilar1[p][3])
   }
 };
