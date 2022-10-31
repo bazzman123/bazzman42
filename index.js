@@ -119,10 +119,27 @@ function creditFromURL(list) {
       var doc1 = parser.parseFromString(html1, 'text/html');
       let creditBool = doc1.getElementById("data-credit").textContent;
       if (creditBool === "Ja") {
+        /*
         var listItem = document.createElement("LI"); //Creates item list
         var carInfoN = " ( " +list1[i]["year"] + " ) " + list1[i]["model"] + "---------" + "Ägare: " + list1[i]["owner"];
         var listText = document.createTextNode(carInfoN);
         listItem.appendChild(listText);
+        document.getElementById("carsList").appendChild(listItem);
+        */
+        var listItem = document.createElement('span')
+        listItem.innerHTML = dateString;
+        var span1 = document.createElement('span');
+        var span1Text = document.createTextNode(år);
+        span1.setAttribute("class", "year1");
+        var span2 = document.createElement('span');
+        var span2Text = document.createTextNode(model);
+        span2.setAttribute("class", "model1");
+        var span3 = document.createElement('span');
+        var span3Text = document.createTextNode(owner);
+        span3.setattribute("class", "owner1");
+        span1.appendChild(dateSpan1);
+        span2.appendChild(dateSpan);
+        span3.appendChild(dateSpan);
         document.getElementById("carsList").appendChild(listItem);
         
       }
