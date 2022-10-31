@@ -126,8 +126,11 @@ function creditFromURL(list) {
         listItem.appendChild(listText);
         document.getElementById("carsList").appendChild(listItem);
         */
+        var listItem = document.createElement("LI"); 
+        listItem.setAttribute("class", "listItemFlex");
+        
         var listItem = document.createElement('span')
-        listItem.innerHTML = dateString;
+        //listItem.innerHTML = dateString;
         var span1 = document.createElement('span');
         var span1Text = document.createTextNode(år);
         span1.setAttribute("class", "year1");
