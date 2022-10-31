@@ -178,7 +178,7 @@ function displayCars(bilar) {
   var values = Object.keys(bilar[2]).map(function(key){
     return bilar[2][key];
   });
-  console.log(Object.keys(bilar[2][0]));
+  //console.log(Object.keys(bilar[2][0]));
   console.log(Object.keys(bilar[2][1]));
   console.log(Object.keys(bilar[2][2]));
   console.log(Object.keys(bilar[2][3]));
