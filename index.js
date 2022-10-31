@@ -165,10 +165,10 @@ function creditFromURL(list) {
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
       list1[i]["regno"] = creditBool;
-      let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
-      newList.push(newObj);
-      //console.log("typeof ---->", typeof(creditBool))
-      //console.log("creditBool --->", creditBool)
+      //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
+      //newList.push(newObj);
+      let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(creditBool)];
+      newList.push(newObj)
     }).catch(err => console.log(err))
   };
   console.log(newList);
