@@ -197,10 +197,11 @@ function displayCars(bilar) {
   };
   */
   console.log(bilar);
-  console.log(bilar[1])
+  console.log(typeof(bilar));
+  console.log(typeof(bilar[0]));
+  console.log(bilar[0]);
   for (let i = 0; i < bilar.length; i++) {
     console.log(bilar[i]);
-    
   };
 };
 
