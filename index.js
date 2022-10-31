@@ -148,7 +148,7 @@ function carsAPI(content, extra) {
   });
 };
 
-function displayCars(listOfCars) {
+function displayCars(bilar) {
   
   //var listItem = document.createElement("LI"); //Creates item list
   for (let i = 0; i < bilar.length; i++) {
