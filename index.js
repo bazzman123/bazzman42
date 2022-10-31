@@ -154,7 +154,7 @@ function carsAPI(content, extra) {
 function creditFromURL(list) {
   let list1 = list;
   for (let i = 0; i < list1.length; i++) {
-    response = fetch(list1[i]["url"]).then(response => response.text()).then((html) => {
+    response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html) => {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
