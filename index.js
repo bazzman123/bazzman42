@@ -181,8 +181,8 @@ function creditFromURL(list) {
     //let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(tempCar[i])];
     //    newList.push(newObj);
     list1[i]["regno"] = c;
+    c = "";
     
-    console.log(creditBool);
     console.log(list1[i]);
   };
   console.log(list1);
