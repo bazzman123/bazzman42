@@ -108,7 +108,7 @@ function creditFromURL(list) {
   let countCredit = 0;
   let totalCars = list.length;
   var listItem1 = document.createElement("p")
-  var textP = "På adressen är totalt" + String(totalCars) + "bilar registrerade, om någon av dom är kreditköpte listas dom nedanför:";
+  var textP = "På adressen är totalt " + String(totalCars) + " bilar registrerade, om någon av dom är kreditköpte listas dom nedanför:";
   var listText1 = document.createTextNode(textP);
   listItem1.appendChild(listText1);
   document.getElementById("carsTitle").appendChild(listItem1);
