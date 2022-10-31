@@ -140,17 +140,27 @@ function carsAPI(content, extra) {
   }).then(function (data) {
     // This is the JSON from our response
     console.log(data);
-    let bilar = data["data"]["vehicles"];
-    for (let i = 0; i < bilar.length; i++) {
-      console.log(bilar[i]["model"]);
-    };
+    /////////////////////////////////////////////////////////// let bilar = data["data"]["vehicles"];
+    displayCars(data["data"]["vehicles"]);
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
   });
 };
 
-
+function displayCars(listOfCars) {
+  
+  //var listItem = document.createElement("LI"); //Creates item list
+  for (let i = 0; i < bilar.length; i++) {
+    //console.log(bilar[i]["model"]);
+    var listItem = document.createElement("LI"); //Creates item list
+    let carInfoN = bilar[i]["owner"] + bilar[i]["year"] + bilar[i]["model"]
+    var listText = document.createTextNode(carInfoN);
+    listItem.appendChild(listText);
+    document.getElementById("carsList").appendChild(listItem);
+  };
+  
+};
 
 
 
