@@ -183,9 +183,9 @@ function displayCars(bilar) {
   //console.log(Object.keys(bilar[2][0]));
   console.log(values);
   for (let i = 0; i < bilar.length; i++) {
-    console.log("KREEEDIIIIT CHECK", bilar[i]["kredit"]);
+    console.log("KREEEDIIIIT CHECK", bilar[i]["regno"]);
     var listItem = document.createElement("LI"); //Creates item list
-    let carInfoN = bilar[i]["kredit"] + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
+    let carInfoN = bilar[i]["regno"] + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
     var listText = document.createTextNode(carInfoN);
     listItem.appendChild(listText);
     document.getElementById("carsList").appendChild(listItem);
