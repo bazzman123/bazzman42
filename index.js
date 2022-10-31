@@ -41,6 +41,12 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
     }
 });
 
+function kreditBoolText(text) {
+  if (text.localeCompare("Ja") == 0) {return "KREDIT-KÖPT"};
+  if (text.localeCompare("Nej") == 0) {return "Ej belånad :("};
+  return "error :("
+};
+
 
 
 
@@ -148,7 +154,7 @@ function carsAPI(content, extra) {
     let bilar = data["data"]["vehicles"]
     creditFromURL(data["data"]["vehicles"]);
     //for (let i = 0; i < bilar.length; i++) {};
-    displayCars(data["data"]["vehicles"]);
+    //displayCars(data["data"]["vehicles"]);
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
@@ -165,7 +171,8 @@ function creditFromURL(list) {
       list1[i]["kredit"] = creditBool;
     }).catch(err => console.log(err))
   };
-  console.log(list1)
+  console.log(list1);
+  displayCars(list1);
 };
 
 
@@ -173,7 +180,7 @@ function displayCars(bilar) {
   for (let i = 0; i < bilar.length; i++) {
     //console.log(bilar[i]["model"]);
     var listItem = document.createElement("LI"); //Creates item list
-    let carInfoN = bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
+    let carInfoN = kreditBoolText(bilar[i]["kredit"]) + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
     var listText = document.createTextNode(carInfoN);
     listItem.appendChild(listText);
     document.getElementById("carsList").appendChild(listItem);
