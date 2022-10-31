@@ -83,63 +83,8 @@ function getSearchHTML(link) {
 };
 
 
-/*
-function carsAPI(content, extra) {
-  fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, stjärna-slash-stjärna'}, body: JSON.stringify(content)}).then(function (response) {
-    // The API call was successful!
-    return response.json();
-  }).then(function (data) {
-    // This is the JSON from our response
-    console.log(data);
-    let owners = [];//obj["data"]["vehicles"];
-    for (let i = 0; i < data["data"]["vehicles"].length; i++) {
-      owners.push(data["data"]["vehicles"][i]["owner"]);
-    };
-    owners = [...new Set(owners)];
-    for (let i = 0; i < owners.length; i++) {
-      owners[i] = owners[i].split(/[ ]|-/g);
-    };
-    function whoOwns(nameTag, array1, array2) {
-      if (countSameItems(nameTag, array2) > countSameItems(nameTag, array1)) {
-          return array2;
-          };
-      if (countSameItems(nameTag, array1) > countSameItems(nameTag, array2)) {
-          return array1;
-          };
-      alert("Error: Båda folkbokförda på adressen har förvånandsvärt liknande namn...");
-      return array1;
-    };
-    let theLastOwner = whoOwns(extra, owners[0], owners[1]);
-    //console.log(theLastOwner);
-    collectedData["namn"] = theLastOwner.join(" ");
-    console.log(collectedData); //looooooooooooooooooooooooooooooooooooog
-    let carsTempMain = [];
-    let carsTemp2 = [];
-    let bad = theLastOwner.join(" ").normalize();
-    for (let i = 0; i < data["data"]["vehicles"].length; i++) {
-      if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == 0) {
-        carsTempMain.push([data["data"]["vehicles"][i]["model"], data["data"]["vehicles"][i]["year"], data["data"]["vehicles"][i]["url"]]);
-        response = fetch(data["data"]["vehicles"][i]["url"]).then(response => response.text()).then((html1) => {
-          var parser1 = new DOMParser();
-          var doc1 = parser.parseFromString(html1, 'text/html');
-          console.log("ReSPOOOONS", doc1);
-          }).catch(err => console.log(err))
-        };
-      //console.log("jaaaa", i);
-      if (bad.localeCompare(data["data"]["vehicles"][i]["owner"].normalize()) == -1) {
-        carsTemp2.push([data["data"]["vehicles"][i]["model"], data["data"]["vehicles"][i]["year"], data["data"]["vehicles"][i]["url"]]);
-        };
-    };
-    console.log(carsTempMain);
-    console.log(carsTemp2);
-    //collectedData["Huvudperson-bilar"] = [];
-    
-  }).catch(function (err) {
-    // There was an error
-    console.warn('Something went wrong.', err);
-  });
-};
-*/
+
+
 function carsAPI(content, extra) {
   fetch("https://www.merinfo.se/api/v1/addresses/vehicles", {method: "POST", redirect: 'follow', headers: {'Content-type': 'application/json', 'Accept': 'application/json, text/plain, */*'}, body: JSON.stringify(content)}).then(function (response) {
     // The API call was successful!
@@ -172,68 +117,18 @@ function creditFromURL(list) {
       let creditBool = doc1.getElementById("data-credit").textContent;
       if (creditBool === "Ja") {
         var listItem = document.createElement("LI"); //Creates item list
-        var carInfoN = list1[i]["model"] + "     År:" + list1[i]["year"] + "     Ägare: " + list1[i]["owner"];
+        var carInfoN = list1[i]["model"] + "                    År:" + list1[i]["year"] + "                  Ägare: " + list1[i]["owner"];
         var listText = document.createTextNode(carInfoN);
         listItem.appendChild(listText);
         document.getElementById("carsList").appendChild(listItem);
         
       }
-      //console.log("MOOOODEL", list1[i]["model"]);
-      //carsTemp.push({"kredit": creditBool, "model": list1[i]["model"], "year": list1[i]["year"], "owner": list1[i]["owner"]});
       
     }).catch(err => console.log(err))
   };
-//console.log(carsTemp);
-//displayCars(carsTemp);
 };
 
 
-/*
-function displayCars(bilar1) {
-  let bilar = bilar1
-  console.log("DISPLAAY", bilar1);
-  console.log("00", bilar1[1]["kredit"]);
-  for (i = 0; i < bilar.length; i++) {
-    console.log(bilar[i]);
-  };
-};
-*/
 
-/*
-    var listItem = document.createElement("LI"); //Creates item list
-    var carInfoN = bilar[i]["regno"] + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
-    var listText = document.createTextNode(carInfoN);
-    listItem.appendChild(listText);
-    document.getElementById("carsList").appendChild(listItem);
-*/
-
-
-
-
-/*
-function isCredit(url) {
-  let finalLink = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + link;
-  response = fetch(finalLink).then(response => response.text()).then((html) => {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(html, 'text/html');
-    console.log(doc)
-  }).catch(err => console.log(err))
-};
-*/
-
-//getHTML EXAMPLE
-/* 
-function getHTML(link) {
-  let PROXY = "https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/";
-  let finalLink = PROXY + link;
-  response = fetch(finalLink).then(response => response.text()).then((html) => {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      let href = doc.getElementsByClassName("link-primary")[0].href;
-      info["searchedLink"] = href;
-      getCODE(href);
-  }).catch(err => console.log(err))
-};
-*/
 
 
