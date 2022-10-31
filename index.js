@@ -153,8 +153,8 @@ function creditFromURL(list) {
         span2 = document.createElement("span");
         span3 = document.createElement("span");
         span1.setAttribute("class", "year1");
-        span1.setAttribute("class", "model1");
-        span1.setAttribute("class", "owner1");
+        span2.setAttribute("class", "model1");
+        span3.setAttribute("class", "owner1");
         span1Text = document.createTextNode(list1[i]["year"]);
         span2Text = document.createTextNode(list1[i]["model"]);
         span3Text = document.createTextNode(list1[i]["owner"]);
