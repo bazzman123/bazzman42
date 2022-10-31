@@ -150,10 +150,20 @@ function creditFromURL(list) {
         */
         var element = document.createElement("li");
         span1 = document.createElement("span");
+        span2 = document.createElement("span");
+        span3 = document.createElement("span");
         span1.setAttribute("class", "year1");
+        span1.setAttribute("class", "model1");
+        span1.setAttribute("class", "owner1");
         span1Text = document.createTextNode(list1[i]["year"]);
+        span2Text = document.createTextNode(list1[i]["model"]);
+        span3Text = document.createTextNode(list1[i]["owner"]);
         span1.appendChild(span1Text);
+        span2.appendChild(span2Text);
+        span3.appendChild(span3Text);
         element.appendChild(span1);
+        element.appendChild(span2);
+        element.appendChild(span3);
         document.getElementById("carsList").appendChild(element);
         
       }
