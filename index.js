@@ -178,13 +178,15 @@ function creditFromURL(list) {
 
 
 function displayCars(bilar) {
-  console.log("BILAAAR CHECK:", bilar);
-  console.log("h1", bilar[2]);
+  //console.log("BILAAAR CHECK:", bilar);
+  //console.log("h1", bilar[2]);
+  /*
   var values = Object.keys(bilar[2]).map(function(key){
     return bilar[2][key];
   });
   //console.log(Object.keys(bilar[2][0]));
   console.log(values);
+  
   for (let i = 0; i < bilar.length; i++) {
     console.log("KREEEDIIIIT CHECK", bilar[i]["regno"]);
     var listItem = document.createElement("LI"); //Creates item list
@@ -193,7 +195,11 @@ function displayCars(bilar) {
     listItem.appendChild(listText);
     document.getElementById("carsList").appendChild(listItem);
   };
-  
+  */
+  console.log(bilar);
+  for (let i = 0; i < bilar.length; i++) {
+    console.log(bilar[i]);
+  };
 };
 
 
