@@ -19,6 +19,7 @@ message.addEventListener('input', function () {
 
 */
 collectedData = {};
+let newList = [];
 
 // Functions:
 function countSameItems(array1, array2){
@@ -38,6 +39,7 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
       while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
       };
+      newList = [];
     }
 });
 
@@ -156,7 +158,7 @@ function carsAPI(content, extra) {
   });
 };
 
-let newList = []; //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+//let newList = []; //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 function creditFromURL(list) {
   let list1 = list;
   //let newList = []; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
