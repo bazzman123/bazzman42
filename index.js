@@ -164,8 +164,8 @@ function creditFromURL(list) {
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
       list1[i]["regno"] = creditBool;
-      console.log("typeof ---->", typeof(creditBool))
-      console.log("creditBool --->", creditBool)
+      //console.log("typeof ---->", typeof(creditBool))
+      //console.log("creditBool --->", creditBool)
     }).catch(err => console.log(err))
   };
   console.log("LIST 1 !!!!!!");
@@ -185,7 +185,7 @@ function displayCars(bilar) {
   for (let i = 0; i < bilar.length; i++) {
     console.log("KREEEDIIIIT CHECK", bilar[i]["regno"]);
     var listItem = document.createElement("LI"); //Creates item list
-    let carInfoN = bilar[i]["regno"] + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
+    var carInfoN = bilar[i]["regno"] + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
     var listText = document.createTextNode(carInfoN);
     listItem.appendChild(listText);
     document.getElementById("carsList").appendChild(listItem);
