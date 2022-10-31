@@ -146,7 +146,7 @@ function carsAPI(content, extra) {
     // This is the JSON from our response
     console.log(data);
     /////////////////////////////////////////////////////////// let bilar = data["data"]["vehicles"];
-    let bilar = data["data"]["vehicles"]
+    //let bilar = data["data"]["vehicles"]
     creditFromURL(data["data"]["vehicles"]);
     //for (let i = 0; i < bilar.length; i++) {};
     //displayCars(data["data"]["vehicles"]);
