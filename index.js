@@ -173,6 +173,8 @@ function creditFromURL(list) {
 
 
 function displayCars(bilar) {
+  console.log("BILAAAR CHECK:", bilar);
+  console.log("h1", bilar[2]);
   for (let i = 0; i < bilar.length; i++) {
     console.log("KREEEDIIIIT CHECK", bilar[i]["kredit"]);
     var listItem = document.createElement("LI"); //Creates item list
