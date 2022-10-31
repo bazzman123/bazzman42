@@ -161,8 +161,10 @@ function carsAPI(content, extra) {
   });
 };
 
+
 //let newList = []; //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 function creditFromURL(list) {
+  const c = "";
   console.log("LIIIST", list);
   let list1 = list;
   //let newList = []; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -171,14 +173,15 @@ function creditFromURL(list) {
       var parser = new DOMParser();
       var doc1 = parser.parseFromString(html1, 'text/html');
       let creditBool = doc1.getElementById("data-credit").textContent;
-      
+      c = creditBool;
     }).catch(err => console.log(err))
     //list1[i]["regno"] = creditBool;
     //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
     //    newList.push(newObj);
     //let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(tempCar[i])];
     //    newList.push(newObj);
-    list1[i]["regno"] = creditBool;
+    list1[i]["regno"] = c;
+    
     console.log(creditBool);
     console.log(list1[i]);
   };
