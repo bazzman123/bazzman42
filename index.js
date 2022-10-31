@@ -42,9 +42,13 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
 });
 
 function kreditBoolText(text) {
-  if (text.localeCompare("Ja") == 0) {return "KREDIT-KÖPT"};
-  if (text.localeCompare("Nej") == 0) {return "Ej belånad :("};
-  return "error :("
+  if (text.localeCompare("Ja") == 0) {
+    return "KREDIT";
+  };
+  if (text.localeCompare("Nej") == 0) {
+    return "Cashad :(";
+  };
+  return "error :(";
 };
 
 
