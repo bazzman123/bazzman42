@@ -202,7 +202,8 @@ function displayCars(bilar1) {
   console.log(bilar1);
   console.log(typeof(bilar1));
   console.log(bilar1[0]);
-  for (let p = 0; p < 4; p++) {
+  console.log(bilar1[0][0]);
+  for (p = 0; p < 6; p++) {
     console.log(bilar1[p][3])
   }
 };
