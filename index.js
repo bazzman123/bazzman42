@@ -117,7 +117,7 @@ function creditFromURL(list) {
       let creditBool = doc1.getElementById("data-credit").textContent;
       if (creditBool === "Ja") {
         var listItem = document.createElement("LI"); //Creates item list
-        var carInfoN = list1[i]["model"] + "                    År:" + list1[i]["year"] + "                  Ägare: " + list1[i]["owner"];
+        var carInfoN = " ( " +list1[i]["year"] + " ) " + list1[i]["model"] + "---------" + "Ägare: " + list1[i]["owner"];
         var listText = document.createTextNode(carInfoN);
         listItem.appendChild(listText);
         document.getElementById("carsList").appendChild(listItem);
