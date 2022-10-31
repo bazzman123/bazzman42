@@ -148,9 +148,11 @@ function carsAPI(content, extra) {
     // This is the JSON from our response
     console.log(data);
     /////////////////////////////////////////////////////////// let bilar = data["data"]["vehicles"];
-    //let bilar = data["data"]["vehicles"]
-    console.log("json type --->", typeof(data["data"]["vehicles"]));
-    creditFromURL(data["data"]["vehicles"]);
+    let bilar = data["data"]["vehicles"]
+    
+    
+    //creditFromURL(data["data"]["vehicles"]);
+    for i in 
     //for (let i = 0; i < bilar.length; i++) {};
     //displayCars(data["data"]["vehicles"]);
   }).catch(function (err) {
@@ -171,15 +173,22 @@ function creditFromURL(list) {
       var parser = new DOMParser();
       var doc1 = parser.parseFromString(html1, 'text/html');
       let creditBool = doc1.getElementById("data-credit").textContent;
+      var listItem = document.createElement("LI"); //Creates item list
+      var carInfoN = creditBool + " " + list1[i]["owner"] + " " + list1[i]["year"] + " " + list1[i]["model"];
+      var listText = document.createTextNode(carInfoN);
+      listItem.appendChild(listText);
+      document.getElementById("carsList").appendChild(listItem);
       //console.log("MOOOODEL", list1[i]["model"]);
-      carsTemp.push({"kredit": creditBool, "model": list1[i]["model"], "year": list1[i]["year"], "owner": list1[i]["owner"]});
+      //carsTemp.push({"kredit": creditBool, "model": list1[i]["model"], "year": list1[i]["year"], "owner": list1[i]["owner"]});
+      
     }).catch(err => console.log(err))
   };
-console.log(carsTemp);
-displayCars(carsTemp);
+//console.log(carsTemp);
+//displayCars(carsTemp);
 };
 
 
+/*
 function displayCars(bilar1) {
   let bilar = bilar1
   console.log("DISPLAAY", bilar1);
@@ -188,7 +197,7 @@ function displayCars(bilar1) {
     console.log(bilar[i]);
   };
 };
-
+*/
 
 /*
     var listItem = document.createElement("LI"); //Creates item list
