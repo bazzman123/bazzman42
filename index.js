@@ -129,7 +129,7 @@ function creditFromURL(list) {
         var listItem = document.createElement("LI"); 
         listItem.setAttribute("class", "listItemFlex");
         
-        var listItem = document.createElement('span')
+        //var listItem = document.createElement('span')
         //listItem.innerHTML = dateString;
         var span1 = document.createElement('span');
         var span1Text = document.createTextNode(list1[i]["year"]);
@@ -140,9 +140,9 @@ function creditFromURL(list) {
         var span3 = document.createElement('span');
         var span3Text = document.createTextNode(list1[i]["owner"]);
         span3.setAttribute("class", "owner1");
-        span1.appendChild(dateSpan1);
-        span2.appendChild(dateSpan);
-        span3.appendChild(dateSpan);
+        span1.appendChild(listItem);
+        span2.appendChild(listItem);
+        span3.appendChild(listItem);
         document.getElementById("carsList").appendChild(listItem);
         
       }
