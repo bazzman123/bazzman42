@@ -180,7 +180,7 @@ function creditFromURL(list) {
 };
 
 
-function displayCars(bilar) {
+function displayCars(bilar1) {
   //console.log("BILAAAR CHECK:", bilar);
   //console.log("h1", bilar[2]);
   /*
@@ -199,11 +199,12 @@ function displayCars(bilar) {
     document.getElementById("carsList").appendChild(listItem);
   };
   */
-  console.log(bilar);
-  console.log(typeof(bilar));
-  for (let i = 0; i < bilar.length; i++) {
-    console.log(bilar[i]);
-  };
+  console.log(bilar1);
+  console.log(typeof(bilar1));
+  console.log(bilar1[0]);
+  for (let i = 0; i < 4; i++) {
+    console.log(bilar1[i])
+  }
 };
 
 
