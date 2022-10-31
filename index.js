@@ -146,14 +146,8 @@ function carsAPI(content, extra) {
     return response.json();
   }).then(function (data) {
     // This is the JSON from our response
-    console.log(data);
-    /////////////////////////////////////////////////////////// let bilar = data["data"]["vehicles"];
-    let bilar = data["data"]["vehicles"]
-    
-    
+    //console.log(data);
     creditFromURL(data["data"]["vehicles"]);
-    //for (let i = 0; i < bilar.length; i++) {};
-    //displayCars(data["data"]["vehicles"]);
   }).catch(function (err) {
     // There was an error
     console.warn('Something went wrong.', err);
@@ -163,16 +157,27 @@ function carsAPI(content, extra) {
 
 function creditFromURL(list) {
   let list1 = list;
+  let countCredit = 0;
+  let totalCars = list.length;
+  var listItem1 = document.createElement("p")
+  var textP = "På adressen är " + string(totalCars) + " registrerade, varav följande är köpa på kredit:";
+  var listText1 = document.createTextNode(textP);
+  listItem1.appendChild(listText1);
+  document.getElementById("carsTitle").appendChild(listItem1);
+  
   for (let i = 0; i < list1.length; i++) {
     response = fetch("https://ghg7femhx6.execute-api.us-east-1.amazonaws.com/" + list1[i]["url"]).then(response => response.text()).then((html1) => {
       var parser = new DOMParser();
       var doc1 = parser.parseFromString(html1, 'text/html');
       let creditBool = doc1.getElementById("data-credit").textContent;
-      var listItem = document.createElement("LI"); //Creates item list
-      var carInfoN = creditBool + " " + list1[i]["owner"] + " " + list1[i]["year"] + " " + list1[i]["model"];
-      var listText = document.createTextNode(carInfoN);
-      listItem.appendChild(listText);
-      document.getElementById("carsList").appendChild(listItem);
+      if (creditBool === "Ja") {
+        var listItem = document.createElement("LI"); //Creates item list
+        var carInfoN = list1[i]["model"] + "     År:" + list1[i]["year"] + "     Ägare: " + list1[i]["owner"];
+        var listText = document.createTextNode(carInfoN);
+        listItem.appendChild(listText);
+        document.getElementById("carsList").appendChild(listItem);
+        
+      }
       //console.log("MOOOODEL", list1[i]["model"]);
       //carsTemp.push({"kredit": creditBool, "model": list1[i]["model"], "year": list1[i]["year"], "owner": list1[i]["owner"]});
       
