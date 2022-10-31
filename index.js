@@ -163,9 +163,9 @@ function creditFromURL(list) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
-      list1[i]["kredit"] = String(creditBool);
-      console.log("typeof", typeof(creditBool))
-      console.log(creditBool)
+      list1[i]["regno"] = creditBool;
+      console.log("typeof ---->", typeof(creditBool))
+      console.log("creditBool --->", creditBool)
     }).catch(err => console.log(err))
   };
   console.log("LIST 1 !!!!!!");
