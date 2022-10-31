@@ -41,19 +41,6 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
     }
 });
 
-function kreditBoolText(text) {
-  res = "error";
-  let input = text;
-  let kredit = "Ja";
-  let inteKredit = "Nej";
-  if (input.localeCompare(kredit) == 0) {
-    res = "KREDIT";
-  };
-  if (input.localeCompare(inteKredit) == 0) {
-    res = "Ej kredit";
-  };
-  return res;
-};
 
 
 
@@ -188,7 +175,7 @@ function displayCars(bilar) {
   for (let i = 0; i < bilar.length; i++) {
     //console.log(bilar[i]["model"]);
     var listItem = document.createElement("LI"); //Creates item list
-    let carInfoN = kreditBoolText(bilar[i]["kredit"]) + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
+    let carInfoN = bilar[i]["kredit"] + " " + bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
     var listText = document.createTextNode(carInfoN);
     listItem.appendChild(listText);
     document.getElementById("carsList").appendChild(listItem);
