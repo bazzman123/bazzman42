@@ -31,9 +31,13 @@ function countSameItems(array1, array2){
 
 document.querySelector('#inputNumber.search.input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-        respondWith(document.getElementById("inputNumber").value);
-        //event.preventDefault();
-        document.getElementById("inputNumber").value = "";
+      respondWith(document.getElementById("inputNumber").value);
+      //event.preventDefault();
+      document.getElementById("inputNumber").value = "";
+      let parent = document.getElementById("carsList");
+      while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      };
     }
 });
 
