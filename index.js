@@ -20,6 +20,7 @@ message.addEventListener('input', function () {
 */
 collectedData = {};
 let newList = [];
+let tempCar = [];
 
 // Functions:
 function countSameItems(array1, array2){
@@ -40,6 +41,7 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
         parent.removeChild(parent.firstChild);
       };
       newList = [];
+      tempCar = [];
     }
 });
 
@@ -168,11 +170,12 @@ function creditFromURL(list) {
       var parser = new DOMParser();
       var doc = parser.parseFromString(html, 'text/html');
       let creditBool = doc.getElementById("data-credit").textContent;
+      tempCar = creditBool;
     }).catch(err => console.log(err));
     //list1[i]["regno"] = creditBool;
     //let newObj = {"owner": list[i]["owner"], "year": list[i]["year"], "model": list[i]["model"], "kredit": creditBool}
     //newList.push(newObj);
-    let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(creditBool)];
+    let newObj = [String(list[i]["owner"]), String(list[i]["year"]), String(list[i]["model"]), String(tempCar[i])];
     newList.push(newObj);
   };
   console.log(newList);
