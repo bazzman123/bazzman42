@@ -141,6 +141,9 @@ function carsAPI(content, extra) {
     // This is the JSON from our response
     console.log(data);
     /////////////////////////////////////////////////////////// let bilar = data["data"]["vehicles"];
+    let bilar = data["data"]["vehicles"]
+    creditFromURL(data["data"]["vehicles"]);
+    //for (let i = 0; i < bilar.length; i++) {};
     displayCars(data["data"]["vehicles"]);
   }).catch(function (err) {
     // There was an error
@@ -148,13 +151,25 @@ function carsAPI(content, extra) {
   });
 };
 
+function creditFromURL(list) {
+  let list1 = list;
+  for (let i = 0; i < list1.length; i++) {
+    response = fetch(finalLink).then(response => response.text()).then((html) => {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      let creditBool = doc.getElementById("data-credit").textContent;
+      list1[i]["kredit"] = creditBool;
+    }).catch(err => console.log(err))
+  };
+  console.log(list1)
+};
+
+
 function displayCars(bilar) {
-  
-  //var listItem = document.createElement("LI"); //Creates item list
   for (let i = 0; i < bilar.length; i++) {
     //console.log(bilar[i]["model"]);
     var listItem = document.createElement("LI"); //Creates item list
-    let carInfoN = bilar[i]["owner"] + bilar[i]["year"] + bilar[i]["model"]
+    let carInfoN = bilar[i]["owner"] + " " + bilar[i]["year"] + " " + bilar[i]["model"]
     var listText = document.createTextNode(carInfoN);
     listItem.appendChild(listText);
     document.getElementById("carsList").appendChild(listItem);
