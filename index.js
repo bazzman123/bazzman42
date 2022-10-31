@@ -42,13 +42,17 @@ document.querySelector('#inputNumber.search.input').addEventListener('keypress',
 });
 
 function kreditBoolText(text) {
-  if (text.localeCompare("Ja") == 0) {
-    return "KREDIT";
+  res = "error";
+  let input = text;
+  let kredit = "Ja";
+  let inteKredit = "Nej";
+  if (input.localeCompare(kredit) == 0) {
+    res = "KREDIT";
   };
-  if (text.localeCompare("Nej") == 0) {
-    return "Cashad :(";
+  if (input.localeCompare(inteKredit) == 0) {
+    res = "Ej kredit";
   };
-  return "error :(";
+  return res;
 };
 
 
