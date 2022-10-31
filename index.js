@@ -126,6 +126,8 @@ function creditFromURL(list) {
         listItem.appendChild(listText);
         document.getElementById("carsList").appendChild(listItem);
         */
+        
+        /*
         var listItem = document.createElement("LI"); 
         listItem.setAttribute("class", "listItemFlex");
         
@@ -134,20 +136,25 @@ function creditFromURL(list) {
         var span1 = document.createElement('span');
         span1.setAttribute("class", "year1");
         var span1Text = document.createTextNode(list1[i]["year"]);
-        document.getElementsByClassName("year1")[0].appendChild(span1);;
         var span2 = document.createElement('span');
         span2.setAttribute("class", "model1");
         var span2Text = document.createTextNode(list1[i]["model"]);
-        document.getElementsByClassName("model1")[0].appendChild(span1);;
         var span3 = document.createElement('span');
         span3.setAttribute("class", "owner1");
         var span3Text = document.createTextNode(list1[i]["owner"]);
-        document.getElementsByClassName("owner1")[0].appendChild(span1);;
         
-        //listItem.appendChild(span1.appendChild(span1Text));
-        //listItem.appendChild(span2.appendChild(span2Text));
-        //listItem.appendChild(span3.appendChild(span3Text));
+        listItem.appendChild(span1.appendChild(span1Text));
+        listItem.appendChild(span2.appendChild(span2Text));
+        listItem.appendChild(span3.appendChild(span3Text));
         document.getElementById("carsList").appendChild(listItem);//.appendChild();
+        */
+        var element = document.createElement("li");
+        span1 = document.createElement("span");
+        span1.setAttribute("class", "year1");
+        span1Text = document.createTextNode(list1[i]["year"]);
+        span1.appendChild(span1Text);
+        element.appendChild(span1);
+        document.getElementById("carsList").appendChild(element);
         
       }
       
